@@ -7,55 +7,47 @@
     tools:context=".Menu">
 
     <LinearLayout
-        android:layout_width="385dp"
-        android:layout_height="199dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        tools:layout_editor_absoluteY="49dp">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textSize="32sp"
-            android:fontFamily="sans-serif-medium"
-            android:text="Menu Principal" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="384dp"
-        android:layout_height="355dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        android:gravity="center"
-        tools:layout_editor_absoluteY="249dp">
+            android:layout_width="271dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Menú Principal"
+            android:textSize="30sp" />
 
         <Button
-            android:id="@+id/button2"
-            android:layout_width="324dp"
+            android:id="@+id/btnSensores"
+            android:layout_width="305dp"
             android:layout_height="wrap_content"
             android:onClick="revisarSensores"
-            android:text="CONTROL DE SENSORES" />
+            android:text="Control de sensores" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="326dp"
+            android:id="@+id/btnPedidos"
+            android:layout_width="306dp"
             android:layout_height="wrap_content"
-            android:text="HISTORIAL DE PEDIDOS" />
+            android:text="Historial de pedidos" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="324dp"
+            android:id="@+id/btnDBprivada"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
-            android:text="BASE PRIVADA" />
+            android:text="Base privada" />
 
         <Button
-            android:id="@+id/button5"
-            android:layout_width="328dp"
+            android:id="@+id/btnSalir"
+            android:layout_width="309dp"
             android:layout_height="wrap_content"
             android:onClick="Salir"
-            android:text="SALIR" />
+            android:text="Salir" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

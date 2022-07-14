@@ -32,108 +32,115 @@ public class RedSensores extends AppCompatActivity {
         setContentView(R.layout.activity_red_sensores);
         mQueue = Volley.newRequestQueue(this);
         Intent login = getIntent();
-        this.token = (String) login.getExtras().get("token");
+        this.token = (String)login.getExtras().get("token");
         revisarSensores();
         btn_next = (Button) findViewById(R.id.btn_datos);
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v)
+            {
                 Intent ingresar_datos = new Intent(getBaseContext(), IngresarDatos.class);
+                ingresar_datos.putExtra("token", token);
                 startActivity(ingresar_datos);
             }
         });
+
     }
 
     private void revisarSensores(){
         final TextView tempValue = (TextView) findViewById(R.id.tempVal);
-        final TextView pesoVal = (TextView) findViewById(R.id.pesoVal);
-        final TextView humedadVal = (TextView) findViewById(R.id.humedadVal);
+        final TextView pesoValue = (TextView) findViewById(R.id.pesoVal);
+        final TextView humedadValue = (TextView) findViewById(R.id.humedadVal);
         String url_temp = "https://amst-labx.herokuapp.com/api/sensores/1";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url_temp, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        System.out.println(response);
-                        try {
-                            tempValue.setText(response.getString("temperatura") + " °C");
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url_temp, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void
+            onResponse(JSONObject response) {
+                System.out.println(response);
+                try {
+                    tempValue.setText(response.getString("temperatura")+ " °C");
+                } catch
+                (Exception e) {
 
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
             }
-        }
-        ){
+        }){
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError{
+            public Map<String, String> getHeaders() throws AuthFailureError
+            {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "JWT" + token);
+                params.put("Authorization", "JWT " + token);
                 System.out.println(token);
                 return params;
             }
         };;
         mQueue.add(request);
-        String url_humedad = "https://amst-labx.herokuapp.com/api/sensores/2";
-        JsonObjectRequest request_humedad = new JsonObjectRequest(Request.Method.GET, url_humedad, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        System.out.println(response);
-                        try {
-                            humedadVal.setText(response.getString("humedad") + " %");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        String url_humedad="https://amst-labx.herokuapp.com/api/sensores/2";
+        JsonObjectRequest request_humedad = new JsonObjectRequest(Request.Method.GET, url_humedad, null, new Response.Listener<JSONObject>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void
+            onResponse(JSONObject response) {
+                System.out.println(response);
+                try {
+                    humedadValue.setText(response.getString(
+                            "humedad")+ " %");
+                } catch
+                (Exception e) {
 
+                    e.printStackTrace();
+                }
             }
-        }
-        ){
+        }, new Response.ErrorListener() {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError{
+            public void
+            onErrorResponse(VolleyError error) {
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError
+            {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "JWT"+token);
+                params.put("Authorization", "JWT " + token);
                 System.out.println(token);
                 return params;
             }
         };;
         mQueue.add(request_humedad);
         String url_peso = "https://amst-labx.herokuapp.com/api/sensores/3";
-        JsonObjectRequest request_peso = new JsonObjectRequest(Request.Method.GET, url_peso, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        System.out.println(response);
-                        try {
-                            pesoVal.setText(response.getString("peso") + " g");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        JsonObjectRequest request_peso = new JsonObjectRequest(Request.Method.GET, url_peso, null, new Response.Listener<JSONObject>() {
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void
+            onResponse(JSONObject response) {
+                System.out.println(response);
+                try {
+                    pesoValue.setText(response.getString("peso")+ " g");
+                } catch
+                (Exception e) {
 
+                    e.printStackTrace();
+                }
             }
-        }
-        ){
+        }, new Response.ErrorListener() {
             @Override
-            public Map<String, String> getHeaders() throws AuthFailureError{
+            public void
+            onErrorResponse(VolleyError error) {
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError
+            {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "JWT"+token);
+                params.put("Authorization", "JWT " + token);
+                System.out.println(token);
                 return params;
             }
         };;
         mQueue.add(request_peso);
     }
-
-
 
 }

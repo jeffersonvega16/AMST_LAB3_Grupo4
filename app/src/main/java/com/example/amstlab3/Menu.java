@@ -15,12 +15,10 @@ public class Menu extends AppCompatActivity {
         Intent login = getIntent();
         this.token = (String)login.getExtras().get("token");
     }
-
     public void Salir(View v){
         this.finish();
         System.exit(0);
     }
-
     public void revisarSensores(View v){
         Intent red_sensores = new Intent(getBaseContext(), RedSensores.class);
         red_sensores.putExtra("token", token);

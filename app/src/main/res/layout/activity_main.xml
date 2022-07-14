@@ -7,56 +7,48 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="399dp"
-        android:layout_height="151dp"
+        android:layout_width="401dp"
+        android:layout_height="423dp"
         android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="84dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:id="@+id/txtBienvenida"
+            android:layout_width="200dp"
+            android:layout_height="130dp"
             android:gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="36sp"
-            android:text="Bienvenido" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="408dp"
-        android:layout_height="200dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="236dp">
-
+            android:text="Bienvenido"
+            android:textSize="36sp" />
         <EditText
             android:id="@+id/txtUsuario"
-            android:layout_width="279dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
-            android:minHeight="48dp"
             android:ems="10"
-            android:inputType="textCapSentences|textAutoCorrect" />
-
+            android:hint="Usuario"
+            android:inputType="text"
+            android:minHeight="48dp" />
         <EditText
             android:id="@+id/txtClave"
-            android:layout_width="276dp"
-            android:layout_height="35dp"
-            android:hint="clave"
-            android:minHeight="48dp"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="Clave"
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="279dp"
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="irMenuPrincipal"
-            android:text="Inicio de sesion" />
+            android:backgroundTint="#5707E4"
+            android:text="Inicio de Sesión"
+            android:textColor="#FAFAFB"
+            />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
