@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+    <LinearLayout
+        android:layout_width="385dp"
+        android:layout_height="199dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        android:gravity="center"
+        tools:layout_editor_absoluteY="49dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Menu Principal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="384dp"
+        android:layout_height="355dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        android:gravity="center"
+        tools:layout_editor_absoluteY="249dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:onClick="revisarSensores"
+            android:text="CONTROL DE SENSORES" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:text="HISTORIAL DE PEDIDOS" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:text="BASE PRIVADA" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:onClick="Salir"
+            android:text="SALIR" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
